@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}Главная{% endblock %} · Велоцех</title>
+  <title>{% block title %}Главная{% endblock %} · Точка сбора</title>
   <link rel="stylesheet" href="{% static 'workshop/style.css' %}">
 </head>
 <body>
 <header class="header">
   <div class="wrap bar">
-    <a class="brand" href="{% url 'workshop:home' %}"><span>↗</span> ВЕЛОЦЕХ</a>
+    <a class="brand" href="{% url 'workshop:home' %}"><span>↗</span> ТОЧКА СБОРА</a>
     {% with page=request.resolver_match.url_name %}
     <nav aria-label="Главная навигация">
       <a href="{% url 'workshop:home' %}" {% if page == 'home' %}aria-current="page"{% endif %}>Главная</a>
@@ -24,14 +24,15 @@
           </div>
         </details>
       </div>
-      <a href="{% url 'workshop:services' %}" {% if page == 'services' %}aria-current="page"{% endif %}>Услуги</a>
-      <a href="{% url 'workshop:prices' %}" {% if page == 'prices' %}aria-current="page"{% endif %}>Цены</a>
+      <a href="{% url 'workshop:routes' %}" {% if page == 'routes' %}aria-current="page"{% endif %}>Маршруты</a>
+      <a href="{% url 'workshop:schedule' %}" {% if page == 'schedule' %}aria-current="page"{% endif %}>Расписание</a>
     </nav>
     {% endwith %}
   </div>
 </header>
 <main class="wrap">{% block content %}{% endblock %}</main>
-<footer class="wrap footer"><strong>↗ ВЕЛОЦЕХ</strong><span>Учебный проект · Веломастерская</span></footer>
+<footer class="wrap footer"><strong>↗ ТОЧКА СБОРА</strong><span>Учебный проект · Туристический клуб</span></footer>
 </body>
 </html>
+
 

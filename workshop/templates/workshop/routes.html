@@ -1,0 +1,5 @@
+{% extends 'workshop/base.html' %}
+{% block title %}Маршруты{% endblock %}
+{% block content %}
+<section class="page"><h1>Маршруты<span>.</span></h1><div class="grid"><article><h2>Лесная тропа</h2><p>8 км · 3 часа · начальный уровень. Прогулка по лесным тропам с остановкой у озера.</p></article><article><h2>Вдоль реки</h2><p>15 км · 5 часов · средний уровень. Поход по берегу с привалом на обед.</p></article></div><a class="button" href="{% url 'workshop:schedule' %}">Открыть расписание ↗</a></section>
+{% endblock %}

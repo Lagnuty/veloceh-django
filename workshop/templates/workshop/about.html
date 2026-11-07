@@ -1,6 +1,5 @@
 {% extends 'workshop/base.html' %}
 {% block title %}О компании{% endblock %}
 {% block content %}
-<section class="page"><p class="tag">02 / ВЕЛОЦЕХ</p><h1>О компании<span>.</span></h1><p class="lead">«Велоцех» — мастерская для городских и горных велосипедов. Мы помогаем подготовить велосипед к ежедневным поездкам и сезонным выездам.</p><section class="grid"><article><h2>Контакты</h2><p>Почта и часы работы мастерской.</p><a href="{% url 'workshop:contacts' %}">Открыть контакты ↗</a></article><article><h2>Как нас найти</h2><p>Адрес и ориентиры для входа.</p><a href="{% url 'workshop:directions' %}">Открыть схему проезда ↗</a></article></section></section>
+<section class="page"><h1>О компании<span>.</span></h1><p class="lead">«Точка сбора» — туристический клуб для тех, кто хочет ходить в походы в компании. На встречах обсуждаем маршруты, собираем группы и помогаем подобрать снаряжение.</p><div class="grid"><article><a href="{% url 'workshop:contacts' %}">Контакты ↗</a></article><article><a href="{% url 'workshop:directions' %}">Как нас найти ↗</a></article></div></section>
 {% endblock %}
-
