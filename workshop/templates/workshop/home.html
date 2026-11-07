@@ -1,0 +1,13 @@
+{% extends 'workshop/base.html' %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<section class="hero">
+<div><p class="tag">01 / ГОРОДСКАЯ ВЕЛОМАСТЕРСКАЯ</p><h1>Снова<br>на ходу<span>.</span></h1>
+<p class="lead">Настроим тормоза и передачи, устраним прокол и подготовим велосипед к сезону.</p>
+<a class="button" href="{% url 'workshop:services' %}">Посмотреть услуги ↗</a></div>
+<div class="art"><svg viewBox="0 0 420 250" role="img" aria-label="Схематичный рисунок велосипеда">
+<g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><circle cx="90" cy="165" r="65"/><circle cx="330" cy="165" r="65"/><path d="M90 165l60-90 64 90H90l36-54h166l-78 54M330 165l-55-114h35m-175 24h32"/><circle cx="214" cy="165" r="11"/></g>
+</svg><span>FIG. 01 / ВЕЛОСИПЕД</span></div></section>
+<section class="grid"><article><p class="tag">01 / РЕМОНТ</p><h2>От прокола до переборки</h2><p>Устраняем мелкие поломки и обслуживаем изношенные узлы.</p></article><article><p class="tag">02 / ДИАГНОСТИКА</p><h2>Осмотр перед ремонтом</h2><p>Проверяем велосипед и согласуем список работ и стоимость.</p></article></section>
+{% endblock %}
+
