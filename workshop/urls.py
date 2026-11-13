@@ -1,15 +1,14 @@
 from django.urls import path
-from django.views.generic import TemplateView
+
+from . import views
 
 app_name = "workshop"
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="workshop/home.html"), name="home"),
-    path("about/", TemplateView.as_view(template_name="workshop/about.html"), name="about"),
-    path("about/contacts/", TemplateView.as_view(template_name="workshop/contacts.html"), name="contacts"),
-    path("about/directions/", TemplateView.as_view(template_name="workshop/directions.html"), name="directions"),
-    path("routes/", TemplateView.as_view(template_name="workshop/routes.html"), name="routes"),
-    path("schedule/", TemplateView.as_view(template_name="workshop/schedule.html"), name="schedule"),
+    path("", views.home, name="home"),
+    path("about/", views.about, name="about"),
+    path("about/contacts/", views.contacts, name="contacts"),
+    path("about/directions/", views.directions, name="directions"),
+    path("routes/", views.routes, name="routes"),
+    path("schedule/", views.schedule, name="schedule"),
 ]
-
-
