@@ -1,5 +1,6 @@
 {% extends 'workshop/base.html' %}
+{% load static %}
 {% block title %}Главная{% endblock %}
 {% block content %}
-<section class="hero"><div><p class="tag">ТУРИСТИЧЕСКИЙ КЛУБ</p><h1>Точка сбора<span>.</span></h1><p class="lead">Организуем походы выходного дня и знакомим новичков с пешим туризмом.</p><a class="button" href="{% url 'workshop:routes' %}">Выбрать маршрут ↗</a></div><div class="art"><svg viewBox="0 0 420 250" role="img" aria-label="Горные вершины"><path d="M20 210 145 65l60 72 55-60 140 133H20zm88-102 37 24 31-26m54 4 30 22 32-25" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/></svg></div></section>
+<section class="hero"><div><p class="tag">ТУРИСТИЧЕСКИЙ КЛУБ</p><h1>Точка сбора<span>.</span></h1><p class="lead">Организуем походы выходного дня и знакомим новичков с пешим туризмом.</p><a class="button" href="{% url 'workshop:routes' %}">Выбрать маршрут ↗</a></div><img class="art" src="{% static 'workshop/mountains.png' %}" width="680" height="432" alt="Горные вершины"></section>
 {% endblock %}
