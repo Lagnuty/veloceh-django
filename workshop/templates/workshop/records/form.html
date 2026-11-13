@@ -1,0 +1,18 @@
+{% extends 'workshop/base.html' %}
+{% block title %}{{ action }}{% endblock %}
+{% block content %}
+<section class="page">
+  <p><a href="{% url list_name %}">← {{ title }}</a></p>
+  <h1>{{ action }}</h1>
+  <form class="record-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="button" type="submit">Сохранить</button>
+    {% if object %}
+      <a href="{{ object.get_absolute_url }}">Отмена</a>
+    {% else %}
+      <a href="{% url list_name %}">Отмена</a>
+    {% endif %}
+  </form>
+</section>
+{% endblock %}

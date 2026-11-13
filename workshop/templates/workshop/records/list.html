@@ -1,0 +1,18 @@
+{% extends 'workshop/base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<section class="page">
+  <h1>{{ title }}</h1>
+  <a class="button" href="{% url create_name %}">Добавить</a>
+  <div class="grid">
+    {% for item in object_list %}
+      <article>
+        {% if item.photo %}<img class="record-photo" src="{{ item.photo.url }}" alt="{{ item }}">{% endif %}
+        <h2><a href="{{ item.get_absolute_url }}">{{ item }}</a></h2>
+      </article>
+    {% empty %}
+      <p>Записей пока нет.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

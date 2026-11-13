@@ -1,0 +1,40 @@
+{% extends 'workshop/base.html' %}
+{% block title %}{{ object }}{% endblock %}
+{% block content %}
+<section class="page">
+  <p><a href="{% url list_name %}">← {{ title }}</a></p>
+  <h1>{{ object }}</h1>
+  {% if object.photo %}<img class="record-photo" src="{{ object.photo.url }}" alt="{{ object }}">{% endif %}
+  {% if list_name == 'workshop:routes' %}
+    <p><strong>Длина в километрах:</strong> {{ object.distance }}</p>
+    <p><strong>Сложность:</strong> {{ object.difficulty }}</p>
+    <p><strong>Описание:</strong> {{ object.description }}</p>
+  {% elif list_name == 'workshop:schedule' %}
+    <p><strong>Маршрут:</strong> {{ object.route }}</p>
+    <p><strong>Инструктор:</strong> {{ object.guide|default_if_none:"Не назначен" }}</p>
+    <p><strong>Место сбора:</strong> {{ object.meeting_point }}, {{ object.meeting_point.address }}</p>
+    <p><strong>Дата:</strong> {{ object.date|date:"d.m.Y" }}</p>
+    <p><strong>Время:</strong> {{ object.time|time:"H:i" }}</p>
+    <h2>Записавшиеся участники</h2>
+    <ul>
+      {% for registration in object.registration_set.all %}
+        <li><a href="{{ registration.member.get_absolute_url }}">{{ registration.member }}</a></li>
+      {% empty %}
+        <li>Пока никто не записался.</li>
+      {% endfor %}
+    </ul>
+  {% elif list_name == 'workshop:guides' %}
+    <p><strong>Телефон:</strong> {{ object.phone }}</p>
+    <p><strong>Опыт:</strong> {{ object.experience }}</p>
+  {% elif list_name == 'workshop:equipment' %}
+    <p><strong>Количество:</strong> {{ object.quantity }}</p>
+    <p><strong>Описание:</strong> {{ object.description }}</p>
+  {% elif list_name == 'workshop:members' %}
+    <p><strong>Электронная почта:</strong> {{ object.email }}</p>
+  {% endif %}
+  <div class="record-actions">
+    <a class="button" href="{% url update_name object.pk %}">Изменить</a>
+    <a href="{% url delete_name object.pk %}">Удалить</a>
+  </div>
+</section>
+{% endblock %}

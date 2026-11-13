@@ -1,0 +1,15 @@
+{% extends 'workshop/base.html' %}
+{% block title %}Удаление записи{% endblock %}
+{% block content %}
+<section class="page">
+  <h1>Удаление записи</h1>
+  <p>Удалить «{{ object }}»?</p>
+  {% if list_name == 'workshop:routes' %}<p>Связанные походы и записи на них тоже будут удалены.</p>{% endif %}
+  {% if list_name == 'workshop:schedule' or list_name == 'workshop:members' %}<p>Связанные записи на походы тоже будут удалены.</p>{% endif %}
+  <form method="post" class="record-actions">
+    {% csrf_token %}
+    <button class="button" type="submit">Подтвердить удаление</button>
+    <a href="{{ object.get_absolute_url }}">Отмена</a>
+  </form>
+</section>
+{% endblock %}

@@ -26,6 +26,9 @@
       </div>
       <a href="{% url 'workshop:routes' %}" {% if page == 'routes' %}aria-current="page"{% endif %}>Маршруты</a>
       <a href="{% url 'workshop:schedule' %}" {% if page == 'schedule' %}aria-current="page"{% endif %}>Расписание</a>
+      <a href="{% url 'workshop:guides' %}">Инструкторы</a>
+      <a href="{% url 'workshop:equipment' %}">Снаряжение</a>
+      <a href="{% url 'workshop:members' %}">Участники</a>
     </nav>
     {% endwith %}
   </div>
